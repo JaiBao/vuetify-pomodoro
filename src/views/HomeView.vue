@@ -1,12 +1,12 @@
 <template lang="pug">
 v-row#home
-  v-col(cols="12")
-    h1.text-center.text-red {{ currentText }}
-    h1.text-center.text-red {{ currentTime }}
-  v-col(cols="12")
-    v-btn(v-if="status !== 1" icon="mdi-play" variant="text" @click="startTimer")
-    v-btn(v-if="status === 1" icon="mdi-pause" variant="text" @click="pauseTimer")
-    v-btn(v-if="currentItem.length > 0" icon="mdi-skip-next" variant="text" @click="finishTimer")
+  v-col.text-center(cols="12")
+    h1.text-red {{ currentText }}
+    h1.text-red {{ currentTime }}
+  v-col(cols="12" justify="center" align  ="center")
+    v-btn.bg-white(v-if="status !== 1" icon="mdi-play" variant="text" @click="startTimer")
+    v-btn.bg-white(v-if="status === 1" icon="mdi-pause" variant="text" @click="pauseTimer")
+    v-btn.bg-white(v-if="currentItem.length > 0" icon="mdi-skip-next" variant="text" @click="finishTimer")
 </template>
 
 <script setup>
@@ -74,3 +74,9 @@ const currentTime = computed(() => {
   return m + ':' + s
 })
 </script>
+<style>
+v-row{
+  height: 100%;
+}
+</style>
+
