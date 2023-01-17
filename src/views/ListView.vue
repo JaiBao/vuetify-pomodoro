@@ -1,16 +1,16 @@
 <template lang="pug">
 v-row#list
+  v-col(cols="12" )
+    h1.text-center.text-red 待辦事項
   v-col(cols="12")
-    h1.text-center 待辦事項
-  v-col(cols="12")
-    v-text-field(ref="input" v-model="newItem" label="新增事項" :rules="[rules.required, rules.length]" @keydown.enter="onInputSubmit")
+    v-text-field.text-red(ref="input" v-model="newItem" label="新增事項" :rules="[rules.required, rules.length]" @keydown.enter="onInputSubmit")
       template(#append)
         v-btn(icon="mdi-plus" variant="text" @click="onInputSubmit")
     v-table
       thead
         tr
-          th 名稱
-          th 操作
+          th.text-blue 名稱
+          th.text-blue  操作
       tbody
         tr(v-if="items.length === 0")
           td.text-center(colspan="2") 沒有事項
@@ -25,18 +25,18 @@ v-row#list
             span(v-else)
               v-btn(icon="mdi-pencil" variant="text" color="green" @click="editItem(item.id)")
               v-btn(icon="mdi-delete" variant="text" color="red" @click="delItem(item.id)")
-  v-divider
-  v-col(cols="12")
-    h1.text-center 已完成事項
+  v-divider(color="yellow")
+  v-col(cols="12" )
+    h1.text-center.text-blue 已完成事項
   v-col(cols="12")
     v-table
       thead
         tr
-          th 名稱
-          th 操作
-      tbody
+          th.text-blue  名稱
+          th.text-blue  操作
+      tbody(color="red")
         tr(v-if="finishedItems.length === 0")
-          td.text-center(colspan="2") 沒有事項
+          td.text-center.text-green(colspan="2") 沒有事項
         tr(v-for="item in finishedItems" v-else :key="item.id" ref="editInputs")
           td {{ item.name }}
           td
@@ -74,3 +74,4 @@ const onInputSubmit = async () => {
   input.value.reset()
 }
 </script>
+<style lang="css" src="../css/style.css" scoped></style>

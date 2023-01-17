@@ -24,3 +24,5 @@ const settings = useSettingsStore()
 const { notify } = storeToRefs(settings)
 const { toggleNotify } = settings
 </script>
+
+<style lang="css" src="./css/style.css" scoped></style>

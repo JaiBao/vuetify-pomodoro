@@ -1,0 +1,25 @@
+
+.v-main {
+    /* background-color: rgba(222, 129, 37, 0.5); */
+    background-blend-mode: multiply;
+    background-image: url('../../public/img/nebula.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center, 18%;
+    position: relative;
+  }
+  
+
+  
+  .v-bar-btn {
+    color: rgb(9, 129, 199);
+  }
+  .v-row{
+    background: url('../../public/img/mask.png') no-repeat center/100% 100%;
+    
+  }
+  .v-table {
+   background: url('../../public/img/mask.png')no-repeat center/100% 100%;
+    
+  }
+

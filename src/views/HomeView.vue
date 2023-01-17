@@ -1,8 +1,8 @@
 <template lang="pug">
 v-row#home
   v-col(cols="12")
-    h1 {{ currentText }}
-    h1 {{ currentTime }}
+    h1.text-center.text-red {{ currentText }}
+    h1.text-center.text-red {{ currentTime }}
   v-col(cols="12")
     v-btn(v-if="status !== 1" icon="mdi-play" variant="text" @click="startTimer")
     v-btn(v-if="status === 1" icon="mdi-pause" variant="text" @click="pauseTimer")
